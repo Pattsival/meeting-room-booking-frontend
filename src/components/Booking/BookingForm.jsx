@@ -447,19 +447,6 @@ const BookingForm = ({ bookingId = null, onClose = null }) => {
               </small>
             </div>
           </div>
-
-          {formData.roomId && formData.bookingDate && !checkingAvailability && availableSlots.length > 0 && !hasTimeConflict && (
-            <div className="available-slots-info">
-              <p><strong>💡 เวลาว่างที่มีในห้องนี้:</strong></p>
-              <div className="slots-list">
-                {availableSlots.slice(0, 6).map((slot, idx) => (
-                  <span key={idx} className="slot-badge">{slot}</span>
-                ))}
-                {availableSlots.length > 6 && <span className="slot-badge">+{availableSlots.length - 6} เวลาอื่น</span>}
-              </div>
-            </div>
-          )}
-
           {checkingAvailability && (
             <div className="checking-message">
               <p>🔄 กำลังตรวจสอบเวลา...</p>
